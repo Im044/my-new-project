@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routine Tracker - Manage Habits</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="nav-title">Routine Tracker</h1>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Today</a>
+        <a href="habits.html" class="nav-link active">Manage Habits</a>
+        <a href="stats.html" class="nav-link">Stats</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="header">
+      <h2>Manage Your Habits</h2>
+      <p>Add, edit, or delete your daily habits and routines</p>
+    </section>
+
+    <section class="habits-management">
+      <div class="add-habit-form">
+        <h3>Add New Habit</h3>
+        <form id="habitForm">
+          <div class="form-group">
+            <label for="habitName">Habit Name *</label>
+            <input type="text" id="habitName" placeholder="e.g., Morning Run" required>
+          </div>
+          <div class="form-group">
+            <label for="habitCategory">Category</label>
+            <select id="habitCategory">
+              <option value="Health">Health</option>
+              <option value="Productivity">Productivity</option>
+              <option value="Mindfulness">Mindfulness</option>
+              <option value="Learning">Learning</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="habitFrequency">Frequency</label>
+            <select id="habitFrequency">
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="custom">Custom</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Habit</button>
+        </form>
+      </div>
+
+      <div class="habits-list">
+        <h3>Your Habits</h3>
+        <div id="habitsList" class="habits-table">
+          <!-- Habits will be loaded here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      loadHabitsManagement();
+    });
+  </script>
+</body>
+</html>
