@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routine Tracker - Daily Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="nav-title">Routine Tracker</h1>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Today</a>
+        <a href="habits.html" class="nav-link">Manage Habits</a>
+        <a href="stats.html" class="nav-link">Stats</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="header">
+      <h2 id="dateDisplay">Today's Progress</h2>
+      <p class="date-info" id="dateInfo"></p>
+    </section>
+
+    <section class="habits-grid" id="habitsContainer">
+      <!-- Habits will be loaded here -->
+    </section>
+
+    <section class="summary">
+      <div class="summary-card">
+        <h3>Today's Summary</h3>
+        <p>Completed: <span id="completedCount">0</span> / <span id="totalCount">0</span></p>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p class="completion-text" id="completionText">0% Complete</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      updateDashboard();
+      setInterval(updateDashboard, 60000);
+    });
+  </script>
+</body>
+</html>
