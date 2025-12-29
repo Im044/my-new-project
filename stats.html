@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routine Tracker - Statistics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="nav-title">Routine Tracker</h1>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Today</a>
+        <a href="habits.html" class="nav-link">Manage Habits</a>
+        <a href="stats.html" class="nav-link active">Stats</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="header">
+      <h2>Your Statistics</h2>
+      <p>Track your progress and consistency over time</p>
+    </section>
+
+    <section class="stats-container">
+      <div class="stats-filters">
+        <label for="timeRange">Time Range:</label>
+        <select id="timeRange">
+          <option value="week">This Week</option>
+          <option value="month">This Month</option>
+          <option value="all">All Time</option>
+        </select>
+      </div>
+
+      <div class="stats-grid" id="statsContainer">
+        <!-- Stats will be loaded here -->
+      </div>
+
+      <div class="heatmap-section">
+        <h3>Activity Heatmap</h3>
+        <div id="heatmapContainer" class="heatmap">
+          <!-- Heatmap will be generated here -->
+        </div>
+      </div>
+
+      <div class="detailed-stats" id="detailedStats">
+        <!-- Detailed statistics will be loaded here -->
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      loadStatistics();
+      document.getElementById('timeRange').addEventListener('change', loadStatistics);
+    });
+  </script>
+</body>
+</html>
